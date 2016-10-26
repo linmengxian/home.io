@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>动画--过渡属性</title>
+<style type="text/css">
+.wrapper div{
+	 width:200px;
+	 height:200px;
+	 background-color:red;
+	 margin:20px auto;
+	 transition:background-color 0.5s ease 0.1s;
+	 -webkit-transition:background-color 0.5s ease 0.1s;
+	 }
+.wrapper div:hover{
+	 background-color:orange;
+	}
+.demo div{
+	 width:200px;
+	 height:200px;
+	 background-color:orange;
+	 margin:20px auto;
+	 transition-property:width;
+	 -webkit-transition-property:width;
+	 transition-duration:0.1s;
+	 -webkit-transition-duration:0.1s;
+	 transition-timing-function:ease-in;
+	 -webkit-transition-timing-function:ease-in;
+	 transition-delay:0.18s;
+	 -webkit-transition-delay:0.18s;
+	}
+.demo div:hover{
+	width:400px;
+
+}
+</style>
+</head>
+
+<body>
+<div class="wrapper"><div></div></div>
+
+<div class="demo">
+<div></div>
+</div>
+</body>
+</html>

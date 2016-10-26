@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>变形--扭曲 </title>
+<style type="text/css">
+.wrapper{
+	 width:300px;
+	 height:100px;
+	 border:2px solid red;
+	 margin:30px auto;
+	}
+.wrapper div{
+	 width:300px;
+	 height:100px;
+	 line-height:100px;
+	 text-align:center;
+	 color:#fff;
+	 background:orange;
+	 transform:skew(45deg);
+	 -webkit-transform:skew(45deg);
+	 -moz-transform:skew(45deg);
+	}
+.demo{
+	 width:200px;
+	 height:200px;
+	 border:2px solid pink;
+	 margin:30px auto;
+	}
+.demo div{
+	 width:200px;
+	 height:200px;
+	 line-height:100px;
+	 text-align:center;
+	 color:#fff;
+	 background:orange;
+	 transform:skew(30deg,30deg);
+	 -webkit-transform:skew(30deg,30deg);
+	 -moz-transform:skew(30deg,30deg);
+	}
+</style>
+</head>
+
+<body>
+<div class="wrapper">
+<div>我变成平行四边形</div>
+</div>
+<br><hr><br>
+<div class="demo">
+<div>我变成畸形</div>
+</div>
+</body>
+</html>

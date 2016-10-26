@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>结构性伪类选择器—not</title>
+<style type="text/css">
+form{
+	width:200px;
+	margin:20px auto;
+	}
+div{
+	margin-bottom:20px;
+	}
+input:not([type="submit"]){
+	border:1px solid red;
+	}
+</style>
+</head>
+
+<body>
+<form action="#">
+ <div>
+ <label for="name">用户名:</label>
+ <input type="text" name="name" id="name" placeholder="请输入用户名"/>
+ </div>
+ <div>
+ <label for="name">密码:</label>
+ <input type="password" name="name" id="name" placeholder="请输入密码"/>
+ </div>
+ <div>
+ <input type="submit" value="提交"/>
+ </div>
+</form>
+</body>
+</html>

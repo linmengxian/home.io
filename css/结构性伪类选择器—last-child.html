@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>结构性伪类选择器—last-child</title>
+<style type="text/css">
+.post{
+	 padding:10px;
+	 border:1px solid #ccc;
+	 width:200px;
+	 margin:20px auto;
+	}
+.post p{
+	 margin:0 0 15px o;
+	}
+.post p:last-child{
+	margin-bottom:0px;
+	color:red;
+	}
+</style>
+</head>
+
+<body>
+<div class="post">
+<p>第一段落</p>
+<p>第二段落</p>
+<p>第三段落</p>
+<p>第四段落</p>
+<p>第五段落</p>
+</div>
+</body>
+</html>
