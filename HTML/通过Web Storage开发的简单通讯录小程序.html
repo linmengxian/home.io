@@ -1,0 +1,71 @@
+<!--录入联系人，联系人有姓名、手机号码2个字段，以手机号作为key存入localStorage；-->
+<!--根据手机号码，查找机主；-->
+<!--列出当前已保存的所有联系人信息；-->
+
+<!--首先，准备一个简单的HTML页面，如下：-->
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <title>通过Web Storage开发的一个简单通信录小程序</title>
+
+    <script type="text/javascript">
+//        要实现联系人的保存，只需要简单实现如下JS方法即可：
+        //保存数据
+        function save(){
+            var mobilephone = document.getElementById("mobilephone").value;
+            var user_name = document.getElementById("user_name").value;
+            localStorage.setItem(mobilephone,user_name);
+        }
+
+//        要实现查找机主，则实现如下JS方法：
+        //查找数据
+        function find(){
+            var search_phone = document.getElementById("search_phone").value;
+            var name = localStorage.getItem(search_phone);
+            var find_result = document.getElementById("find_result");
+            find_result.innerHTML = search_phone + "的机主是：" + name;
+        }
+
+//        要展现所有已保存的联系人信息，则需要使用localStorage.key(index)方法，如下：
+        //将所有存储在localStorage中的对象提取出来，并展现到界面上
+        function loadAll(){
+            var list = document.getElementById("list");
+//            list.clearStorage();
+            if(localStorage.length>0){
+                var result = "<table border='1'>";
+                result += "<tr><td>姓名</td><td>手机号码</td></tr>";
+                for(var i=0;i<localStorage.length;i++){
+                    var mobilephone = localStorage.key(i);
+                    var name = localStorage.getItem(mobilephone);
+                    result += "<tr><td>"+name+"</td><td>"+mobilephone+"</td></tr>";
+                }
+                result += "</table>";
+                list.innerHTML = result;
+            }else{
+                list.innerHTML = "目前数据为空，赶紧开始加入联系人吧";
+            }
+        }
+    </script>
+</head>
+<body>
+<div style="border: 2px dashed #ccc;width:320px;text-align:center;">
+    <label for="user_name">姓名：</label>
+    <input type="text" id="user_name" name="user_name" class="text"/>
+    <br/>
+    <label for="mobilephone">手机：</label>
+    <input type="text" id="mobilephone" name="mobilephone"/>
+    <br/>
+    <input type="button" onclick="save()" value="新增记录"/>
+    <hr/>
+    <label for="search_phone">输入手机号：</label>
+    <input type="text" id="search_phone" name="search_phone"/>
+    <input type="button" onclick="find()" value="查找机主"/>
+    <p id="find_result"><br/></p>
+</div>
+<br/>
+<button onclick="loadAll();">显示所有联系信息</button>
+<div id="list" style="width: 320px;border:2px dashed #ccc;;">
+</div>
+</body>
+</html>
